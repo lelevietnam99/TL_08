@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHƯƠNG 1: LÝ THUYẾT ADHYĀSA CỦA ŚAṄKARĀCĀRYA</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+            color: #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Nền hiệu ứng sao vũ trụ */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 50px 160px, #a5b4fc, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 130px 80px, #c084fc, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 180px 220px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 250px 120px, #38bdf8, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 320px 280px, #fff, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 350px 350px;
+            opacity: 0.65;
+            z-index: 0;
+        }
+
+        /* Quầng sáng tinh vân (Nebula effect) */
+        .nebula {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(147, 51, 234, 0.18) 0%, rgba(59, 130, 246, 0.12) 40%, rgba(0, 0, 0, 0) 70%);
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Khung kính mờ Glassmorphism */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 950px;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.78);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 48px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7),
+                        0 0 30px rgba(168, 85, 247, 0.15);
+        }
+
+        h1 {
+            font-size: 1.6rem;
+            color: #c084fc;
+            text-align: center;
+            margin-bottom: 36px;
+            text-shadow: 0 0 12px rgba(192, 132, 252, 0.4);
+            border-bottom: 1px solid rgba(192, 132, 252, 0.2);
+            padding-bottom: 20px;
+            line-height: 1.5;
+            letter-spacing: 0.5px;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            color: #38bdf8;
+            margin-top: 36px;
+            margin-bottom: 20px;
+            border-left: 4px solid #38bdf8;
+            padding-left: 14px;
+            letter-spacing: 0.3px;
+        }
+
+        h3 {
+            font-size: 1.08rem;
+            color: #f1f5f9;
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            font-size: 1.02rem;
+            line-height: 1.8;
+            margin-bottom: 16px;
+            text-align: justify;
+            color: #cbd5e1;
+        }
+
+        ul {
+            margin-bottom: 16px;
+            padding-left: 20px;
+        }
+
+        li {
+            line-height: 1.7;
+            margin-bottom: 8px;
+            color: #cbd5e1;
+        }
+
+        /* Sơ đồ cấu trúc / Khung sơ đồ nhận thức luận */
+        .diagram-card {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 28px 0;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .diagram-title {
+            text-align: center;
+            font-weight: bold;
+            color: #38bdf8;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            font-size: 0.95rem;
+        }
+
+        .diagram-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .diagram-box {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(192, 132, 252, 0.25);
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .diagram-box-title {
+            color: #c084fc;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .diagram-box-sub {
+            font-size: 0.88rem;
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+
+        /* Khung Tiến trình Giải trừ Adhyāsa */
+        .concept-box {
+            background: rgba(30, 41, 59, 0.6);
+            border-left: 4px solid #c084fc;
+            border-radius: 0 12px 12px 0;
+            padding: 24px;
+            margin: 28px 0;
+            border-top: 1px solid rgba(192, 132, 252, 0.2);
+            border-right: 1px solid rgba(192, 132, 252, 0.2);
+            border-bottom: 1px solid rgba(192, 132, 252, 0.2);
+        }
+
+        .concept-box-title {
+            color: #d8b4fe;
+            font-weight: bold;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+
+        .concept-item {
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .concept-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .concept-item strong {
+            color: #38bdf8;
+        }
+
+        /* Phần Chú thích Footnotes */
+        .footnotes-section {
+            margin-top: 48px;
+            padding-top: 28px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .footnotes-title {
+            font-size: 1.1rem;
+            color: #38bdf8;
+            margin-bottom: 20px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .footnotes-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footnotes-list li {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #94a3b8;
+            margin-bottom: 12px;
+            padding-left: 28px;
+            position: relative;
+            text-align: justify;
+        }
+
+        .footnotes-list li::before {
+            content: attr(data-number);
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #38bdf8;
+            font-weight: bold;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 24px;
+            }
+            .diagram-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nebula"></div>
+    <div class="container">
+        <h1>CHƯƠNG 1: LÝ THUYẾT ADHYĀSA (SỰ GÁN GHÉP / ÁP ĐẶT ĐIÊN ĐẢO) CỦA ŚAṄKARĀCĀRYA</h1>
+
+        <!-- 1.1 -->
+        <h2>1.1. Bản chất và Cơ chế Nhận thức Sai lầm của Adhyāsa: Áp đặt Thuộc tính Huyễn mộng (Māyā) lên Bản thể Chân thật (Brahman)</h2>
+        <p>
+            Trong tòa nhà triết học Advaita Vedānta (Nhất nguyên vô biệt) do đại sư Śaṅkarācārya (Thương Yết La, 788–820) hệ thống hóa, việc giải mã cội nguồn sai lầm của tâm thức con người đóng vai trò là chiếc chìa khóa nhận thức luận trung tâm. Để giải thích lý do tại sao con người bị vây hãm trong vòng xoáy luân hồi sinh tử và chịu sự thao túng của vô vàn nỗi khổ đau hiện sinh mà không làm tổn hại đến tính chất duy nhất, thuần khiết và bất biến của Nirguṇa Brahman (Bản thể Tuyệt đối Vô phẩm chất), Śaṅkarācārya đã xây dựng học thuyết Adhyāsa (Sự cưỡng gán / Áp đặt điên đảo).
+        </p>
+
+        <h3>a. Định nghĩa Nhận thức luận về Adhyāsa (Cưỡng gán / Áp đặt Điên đảo)</h3>
+        <p>
+            <strong>Định nghĩa cốt tủy:</strong> Trong phần mở đầu tác phẩm chú giải kinh điển <em>Brahmasūtra-bhāṣya</em>, Śaṅkarācārya định nghĩa Adhyāsa là hành vi tâm lý áp đặt hay cưỡng gán thuộc tính của một đối tượng này lên một đối tượng khác (<em>Atasmin tadbuddhiḥ</em>). Đó là sự lầm lẫn giữa Chủ thể thực tồn tuyệt đối (Ātman / Brahman) và Đối tượng huyễn giả tương đối (Thân ngũ uẩn và Cõi hiện tượng thế tục).
+        </p>
+        <p>
+            <strong>Nguồn gốc tâm lý:</strong> Sự gán ghép sai lầm này phát sinh do các ấn tượng tâm lý quá khứ (Saṃskāra) tích tụ trong tâm trí, kết hợp với bóng tối Vô minh (Avidyā) che lấp nhận thức hiện tiền. Con người do đó vô tình gán ghép tính chất biến dịch, sinh diệt, đau khổ của thân xác và hoàn cảnh bên ngoài vào Chân ngã hằng thuần tịnh.
+        </p>
+
+        <!-- Sơ đồ Vận hành Adhyāsa -->
+        <div class="diagram-card">
+            <div class="diagram-title">CƠ CHẾ NHẬN THỨC LUẦN ADHYĀSA THEO ŚAṄKARĀCĀRYA</div>
+            <div class="diagram-grid">
+                <div class="diagram-box">
+                    <div class="diagram-box-title">BẢN THỂ THỰC TỒN CHÂN THẬT</div>
+                    <p class="diagram-box-sub">(Nirguṇa Brahman / Ātman) ➔ NỀN TẢNG BẤT BIẾN (Sợi dây thừng / Rajju)</p>
+                </div>
+                <div class="diagram-box">
+                    <div class="diagram-box-title">BÓNG TỐI VÔ MINH (Avidyā)</div>
+                    <p class="diagram-box-sub">(Năng lực che đậy Āvaraṇa) ➔ CƯỠNG GÁN ĐIÊN ĐẢO (Adhyāsa) ➔ ẢO ẢNH CÕI HIỆN TƯỢNG (Con rắn độc / Sarpa / Jagat)</p>
+                </div>
+            </div>
+        </div>
+
+        <h3>b. Cơ chế Vận hành của Adhyāsa dưới Tác động của Vô minh (Avidyā) và Māyā</h3>
+        <p>
+            Śaṅkarācārya phát triển học thuyết Vivartavāda (Huyễn mộng luận) để chỉ ra rằng cõi hiện tượng tương đối (Vyāvahārika-satya / Jagat) do năng lực Māyā của Đấng Hóa công (Īśvara) phóng chiếu. Adhyāsa vận hành như một cơ chế nhận thức hai chiều:
+        </p>
+        <p>
+            <strong>Áp đặt Cái không thực lên Cái thực tồn (Subjective Superimposition):</strong> Tâm trí áp đặt các thuộc tính huyễn giả của thân thể (bệnh tật, già yếu, sinh tử) và của tâm trí (buồn, vui, giận hờn) lên Chân ngã Ātman, làm phát sinh các phán đoán sai lầm: "Tôi đau đớn", "Tôi lo âu", "Tôi chết".
+        </p>
+        <p>
+            <strong>Áp đặt Cái thực tồn lên Cái không thực (Objective Superimposition):</strong> Tâm trí vô tình gán ghép thực tính hằng tồn, cứng chắc của Brahman vào thế giới hiện tượng duyên sinh vô thường (Jagat / Mithyā), khiến con người tham ái, bám chấp và chạy theo cõi duyên trần như thể đó là một thực tại vĩnh cửu.
+        </p>
+
+        <h3>c. Ẩn dụ Kinh điển "Sợi dây - Con rắn" (Rajju-sarpa)</h3>
+        <p>
+            Để minh họa cho cơ chế Adhyāsa, Śaṅkarācārya sử dụng thí dụ ẩn dụ nổi tiếng về Sợi dây thừng và Con rắn (Rajju-sarpa): Trong bóng chiều chạng vạng (biểu tượng cho Vô minh Avidyā che lấp Āvaraṇa), một người nhìn thấy sợi dây thừng cuộn tròn liền phát sinh ảo giác đó là con rắn độc (Sarpa).
+        </p>
+        <p>
+            Con rắn độc không hề thực tồn về mặt bản thể tuyệt đối (Pāramārthika), nhưng nó là Mithyā vì tạo ra trải nghiệm tâm lý sợ hãi, run rẩy và hành vi bỏ chạy hoàn toàn có thật về mặt cảm xúc thế tục (Vyāvahārika). Nỗi sợ hãi hiện sinh của con người (Jīva) trong vòng luân hồi sinh tử cũng chính là kết quả của sự cưỡng gán Adhyāsa: nhìn sợi dây thừng Bản thể Brahman lại áp đặt tưởng thành con rắn ảo giác Māyā.
+        </p>
+
+        <!-- 1.2 -->
+        <h2>1.2. Tiến trình Giải trừ Adhyāsa để Trực nhận Chân tính (Swarūpa-jñāna)</h2>
+
+        <!-- Khung điểm nhấn Tiến trình giải trừ -->
+        <div class="concept-box">
+            <div class="concept-box-title">TIẾN TRÌNH GIẢI TRỪ ADHYĀSA VÀ BỪNG TỈNH TRÍ TUỆ BẤT NHỊ</div>
+            <div class="concept-item">
+                • <strong>BÓC TÁCH LỚP VỎ PHỦ ĐỊNH (Neti, Neti)</strong> ──► Phủ định Thân vật lý, Cảm xúc và Cảnh giới ("Không phải cái này, không phải cái kia").
+            </div>
+            <div class="concept-item">
+                • <strong>THẮP SÁNG ÁNH SÁNG TRÍ TUỆ (Jñāna)</strong> ──► Đèn Bát-nhã bừng sáng ➔ Con rắn ảo giác tan, sợi dây thừng bản thể lộ diện trọn vẹn.
+            </div>
+            <div class="concept-item">
+                • <strong>TRỰC NHẬN ĐẠI NGÔN (Mahāvākya)</strong> ──► Ngộ nhập "Aham Brahmāsmi" (Ta chính là Brahman), đạt trạng thái Giải thoát Đương sinh (Jīvanmukta).
+            </div>
+        </div>
+
+        <h3>a. Vai trò Độc tôn của Trí tuệ Bất nhị (Jñāna)</h3>
+        <p>
+            Śaṅkarācārya khẳng định rằng mọi hình thức cúng tế lễ nghi ngoại tại (Karma), việc thực hành khổ hạnh ép xác hay tín ngưỡng sùng kính suông (Bhakti) tuy có tác dụng làm lắng tịnh tâm trí ở cấp độ tương đối, nhưng tự thân chúng không thể tiêu diệt Adhyāsa. Vì bóng tối Adhyāsa được dựng lên bởi Vô minh (Avidyā), nên chỉ có ánh sáng của Trí tuệ Bất nhị (Jñāna) mới có năng lực giải trừ triệt để sự gán ghép điên đảo đó.
+        </p>
+        <p>
+            Giống như ngọn đèn bừng sáng làm con rắn ảo giác lập tức biến mất mà không cần phải xua đuổi hay tiêu diệt con rắn; sự khởi sinh của Trí tuệ Jñāna làm sụp đổ hoàn toàn cấu trúc Adhyāsa, trả sợi dây thừng Thực tại về nguyên vẹn bản hữu.
+        </p>
+
+        <h3>b. Phương pháp Biện chứng Phủ định "Neti, Neti"</h3>
+        <p>
+            Để tháo gỡ sự cưỡng gán nhầm lẫn giữa Ātman và các yếu tố không phải Ātman (Anātman), Śaṅkarācārya hướng dẫn tiến trình biện chứng phủ định Neti, Neti ("Không phải cái này, không phải cái kia"):
+        </p>
+        <ul>
+            <li><strong>Phủ định Thân xác vật lý:</strong> "Thân xác ngũ uẩn biến dịch này không phải là Ātman" (Neti).</li>
+            <li><strong>Phủ định Cảm xúc và Tâm trí:</strong> "Những cơn sóng buồn vui, giận hờn sinh diệt của tâm trí không phải là Ātman" (Neti).</li>
+            <li><strong>Phủ định Cõi cảnh thế gian:</strong> "Mọi hình tướng huyễn mộng do Māyā phóng chiếu không phải là Ātman" (Neti).</li>
+        </ul>
+
+        <h3>c. Sự Bừng tỉnh Bản thể và Trạng thái Giải thoát Đương sinh (Jīvanmukta)</h3>
+        <p>
+            Khi lưỡi dao biện chứng Neti, Neti bóc tách trọn vẹn năm lớp vỏ che đậy (Pañca-kośa) và các giới hạn phụ thuộc (Upādhi), cấu trúc Adhyāsa tan vỡ hoàn toàn. Tánh giác bừng sáng đưa hành giả trực nhận đại ngôn mệnh đề cốt tủy: "Aham Brahmāsmi" (Ta chính là Brahman) và "Tat Tvam Asi" (Ngươi chính là Cái Đó).
+        </p>
+        <p>
+            Bậc giải thoát đạt trạng thái Jīvanmukta (Giải thoát ngay trong đời hiện tại): vẫn sống giữa cõi đời thế tục (Vyāvahārika), nhưng tâm thức an trú tuyệt đối nơi Bản thể Nirguṇa Brahman (Pāramārthika), thấu suốt cõi Māyā chỉ là trò kịch huyễn mộng (Līlā) và hoàn toàn không còn bị bất kỳ sự cưỡng gán điên đảo nào trói buộc.
+        </p>
+
+        <!-- Footnotes -->
+        <div class="footnotes-section">
+            <div class="footnotes-title">CHÚ THÍCH & TRÍCH DẪN NGUỒN (FOOTNOTES CHO CHƯƠNG 1 - SƯỜN BÀI 8)</div>
+            <ul class="footnotes-list">
+                <li data-number="1">Lê Xuân Khoa (1972), <em>Nhập môn Triết học Ấn Độ</em>, NXB Trung tâm Học liệu Bộ Giáo dục, Sài Gòn, tr. 185–192; đối chiếu bài giảng "1. Buổi 1 (18-01-2026).mp3" & "2. Buổi 2 (ngày 18-01-2026).mp3".</li>
+                <li data-number="2">Śaṅkarācārya, <em>Brahmasūtra-bhāṣya</em> (Chú giải Kinh Brahma), Adhyāya 1, Pāda 1; xem thêm Swami Gambhirananda (dịch) (1965), <em>Brahma Sutra Bhasya of Shankaracharya</em>, Advaita Ashrama, Kolkata, tr. 14–25; đối chiếu bài giảng "2. Buổi 2 (ngày 18-01-2026).mp3" & "3. Buổi 3 (ngày 31-3-2026).mp3".</li>
+                <li data-number="3">Śaṅkarācārya, <em>Vivekacūḍāmaṇi</em> (Trí tuệ minh châu kim cương), Kārikā 108–135; đối chiếu bài giảng "2. Buổi 2 (ngày 18-01-2026).mp3", "3. Buổi 3 (ngày 31-3-2026).mp3" & "3. Buổi học ngày 21-9-2026.mp3" (Phân tích lý thuyết cưỡng gán Adhyāsa, ẩn dụ Rajju-sarpa, trò tiêu khiển Līlā và sự giải thoát Jīvanmukti).</li>
+                <li data-number="4">Radhakrishnan, S. (1999), <em>Indian Philosophy</em>, Vol. 2, Oxford University Press, New Delhi, tr. 480–492; đối chiếu bài giảng "2. Buổi học ngày 16-9-2026.mp3" & "3. Buổi 3 (ngày 31-3-2026).mp3".</li>
+                <li data-number="5">Swami Nikhilananda (trans.) (1949), <em>The Mandukya Upanishad with Gaudapada's Karika and Sankara's Commentary</em>, Sri Ramakrishna Math, Chennai; đối chiếu bài giảng "2. Buổi 2 (ngày 18-01-2026).mp3" (Giải phẫu các trạng thái ý thức và sự vượt thoát Adhyāsa bằng Trí tuệ Jñāna).</li>
+                <li data-number="6">Viện Triết học (2004), <em>Lịch sử Triết học Phương Đông</em>, NXB Chính trị Quốc gia, Hà Nội, tr. 312–318; đối chiếu bài giảng "1. Buổi 1 (18-01-2026).mp3" & "6. Buổi 6 (8-4-2026).mp3".</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

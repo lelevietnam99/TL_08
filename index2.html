@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I. MỞ BÀI - SƯỜN BÀI 8</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+            color: #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Nền hiệu ứng sao vũ trụ */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 50px 160px, #a5b4fc, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 130px 80px, #c084fc, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 180px 220px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 250px 120px, #38bdf8, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 320px 280px, #fff, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 350px 350px;
+            opacity: 0.65;
+            z-index: 0;
+        }
+
+        /* Quầng sáng tinh vân (Nebula background effect) */
+        .nebula {
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(147, 51, 234, 0.2) 0%, rgba(59, 130, 246, 0.12) 40%, rgba(0, 0, 0, 0) 70%);
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            filter: blur(70px);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Khung kính mờ Glassmorphism */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 48px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7),
+                        0 0 30px rgba(168, 85, 247, 0.15);
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            color: #c084fc;
+            text-align: center;
+            margin-bottom: 32px;
+            text-shadow: 0 0 12px rgba(192, 132, 252, 0.4);
+            border-bottom: 1px solid rgba(192, 132, 252, 0.2);
+            padding-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: justify;
+            color: #cbd5e1;
+        }
+
+        /* Khung thơ Kệ "Mộng" */
+        .poem-box {
+            background: rgba(30, 41, 59, 0.6);
+            border-left: 4px solid #c084fc;
+            border-right: 1px solid rgba(192, 132, 252, 0.2);
+            border-top: 1px solid rgba(192, 132, 252, 0.2);
+            border-bottom: 1px solid rgba(192, 132, 252, 0.2);
+            padding: 24px;
+            margin: 28px 0;
+            border-radius: 0 12px 12px 0;
+            text-align: center;
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .poem-content {
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 2;
+            color: #f1f5f9;
+        }
+
+        .highlight-thesis {
+            background: rgba(56, 189, 248, 0.08);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 24px;
+        }
+
+        /* Phần Chú thích Footnotes */
+        .footnotes-section {
+            margin-top: 48px;
+            padding-top: 28px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .footnotes-title {
+            font-size: 1.1rem;
+            color: #38bdf8;
+            margin-bottom: 20px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .footnotes-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footnotes-list li {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #94a3b8;
+            margin-bottom: 12px;
+            padding-left: 28px;
+            position: relative;
+            text-align: justify;
+        }
+
+        .footnotes-list li::before {
+            content: attr(data-number);
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #38bdf8;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="nebula"></div>
+    <div class="container">
+        <h1>I. MỞ BÀI</h1>
+
+        <p>
+            Trong dòng chảy triết học nhận thức luận và tâm lý học giải thoát phương Đông, bản chất của mọi nỗi khổ đau hiện sinh (Dukkha) và sự trôi lăn luân hồi sinh tử đều được xác định khởi nguồn từ một gốc rễ duy nhất: sự bám chấp (Upādāna / Chấp thủ). Sự bám chấp này không tồn tại trừu tượng mà đọng lại thành hai gánh nặng khái niệm kiên cố trói buộc tâm thức con người: <em>Ngã chấp</em> (sự lầm tưởng thân tâm uẩn hợp là một cái Tôi vĩnh cửu, tự chủ) và <em>Pháp chấp</em> (sự lầm tưởng thế giới hiện tượng xung quanh có tự tánh cố định, cứng chắc). Chính hai lăng kính nhận thức méo mó này đã biến thế giới sinh diệt vô thường thành một chiến trường đầy biến động, đẩy con người vào triền miên lo âu, sợ hãi và vướng kẹt.
+        </p>
+
+        <p>
+            Để giải phẫu và tháo gỡ tận gốc rễ cơ chế gán ghép sai lầm này dưới góc độ triết học Nhất nguyên Bất nhị (Advaita Vedānta), đại sư Śaṅkarācārya (788–820) đã xây dựng học thuyết <strong>Adhyāsa</strong> (Sự gán ghép / Áp đặt điên đảo). Theo Śaṅkarācārya, Adhyāsa là công năng nhận thức luận do Vô minh (Avidyā) tạo ra, vô tình áp đặt thuộc tính huyễn mộng (Māyā) lên Bản thể chân thật (Brahman), ví như sự nhầm lẫn kinh điển "nhìn sợi dây thừng cuộn tròn trong đêm chạng vạng gán tưởng con rắn độc" (Rajju-sarpa). Sự giải trừ Adhyāsa bằng Trí tuệ Bất nhị (Jñāna) và biện chứng phủ định Neti Neti ("Không phải cái này, không phải cái kia") đóng vai trò như đòn đập tan con rắn ảo giác, tháo gỡ sự gán ghép điên đảo để trả tâm thức về ngộ nhập Bản thể Đại ngã duy nhất: <em>Aham Brahmāsmi</em> ("Ta chính là Brahman").
+        </p>
+
+        <p>
+            Ở một hướng tiếp cận mang tính giải cấu trúc (Deconstruction) trực tiếp, dung dị và thắm đượm tinh thần Bát-nhã Thiền tông, Thiền sư Thích Thanh Từ qua bài kệ “Mộng” nổi tiếng (sáng tác tại Thiền viện Chân Không, tháng 7 năm 1980) đã tái hiện sự sụp đổ hoàn toàn của hai gánh nặng ngã chấp và pháp chấp thông qua một biểu tượng mỹ học độc đáo—nụ cười Thiền ngộ nhập <strong>“Cười vỡ mộng”</strong>:
+        </p>
+
+        <div class="poem-box">
+            <div class="poem-content">
+                “Gá thân mộng<br>
+                Dạo cảnh mộng<br>
+                Mộng tan rồi<br>
+                Cười vỡ mộng<br>
+                Ghi lời mộng<br>
+                Nhắn khách mộng<br>
+                Biết được mộng<br>
+                Tỉnh cơn mộng.”
+            </div>
+        </div>
+
+        <p>
+            Nhìn từ lăng kính Thiền học Trúc Lâm Yên Tử, nụ cười "Cười vỡ mộng" cất lên chính là khoảnh khắc Tánh giác chiếu soi ("Biết được mộng") lập tức giải vỡ toàn bộ cấu trúc khái niệm phân biệt nhị nguyên. Ngã chấp nơi Thân mộng (coi thể xác là chân thật) và Pháp chấp nơi Cảnh mộng (coi thế gian là cứng chắc) đồng thời bị đập tan; trả tâm thức về với trạng thái vô sở trụ, rỗng rang và tự do tâm linh tuyệt đối ngay giữa lòng thực tại hiện tiền.
+        </p>
+
+        <div class="highlight-thesis">
+            <p style="margin-bottom: 0;">
+                Do đó, bài tiểu luận này hướng đến việc làm sáng tỏ luận đề: Cả Advaita Vedānta và Thiền học Thích Thanh Từ đều hướng tới mục tiêu giải cấu trúc sự bám chấp sai lầm (ngã chấp và pháp chấp) để giải phóng tâm thức khỏi khổ đau; nhưng nếu Śaṅkarācārya vận dụng học thuyết Adhyāsa cùng biện chứng phủ định Neti Neti để triệt hạ ảo ảnh Māyā nhằm quy về Bản thể Đại ngã vĩnh cửu (Nirguṇa Brahman), thì Thiền sư Thích Thanh Từ lại đứng vững trên tinh thần Tánh Không Vô ngã (Śūnyatā / Anātman) để thực hiện tiến trình giải vỡ khái niệm một cách trực tiếp, nhẹ nhàng qua Tánh giác chiếu soi (“Biết được mộng”), biến nụ cười ngộ nhập “Cười vỡ mộng” thành biểu tượng cho sự xả bỏ toàn diện và tự do tâm linh hiện tiền [1, 2, 3, 4b].
+            </p>
+        </div>
+
+        <div class="footnotes-section">
+            <div class="footnotes-title">CHÚ THÍCH & TRÍCH DẪN NGUỒN (FOOTNOTES CHO PHẦN MỞ BÀI - SƯỜN BÀI 8)</div>
+            <ul class="footnotes-list">
+                <li data-number="1">Lê Xuân Khoa (1972), <em>Nhập môn Triết học Ấn Độ</em>, NXB Trung tâm Học liệu Bộ Giáo dục, Sài Gòn, tr. 185–192; đối chiếu bài giảng "1. Buổi 1 (18-01-2026).mp3" & "2. Buổi 2 (ngày 18-01-2026).mp3".</li>
+                <li data-number="2">Śaṅkarācārya, <em>Brahmasūtra-bhāṣya</em> (Chú giải Kinh Brahma), Adhyāya 1, Pāda 1; xem thêm Swami Gambhirananda (dịch) (1965), <em>Brahma Sutra Bhasya of Shankaracharya</em>, Advaita Ashrama, Kolkata, tr. 14–22; đối chiếu bài giảng "2. Buổi 2 (ngày 18-01-2026).mp3" & "3. Buổi 3 (ngày 31-3-2026).mp3".</li>
+                <li data-number="3">Śaṅkarācārya, <em>Vivekacūḍāmaṇi</em> (Trí tuệ minh châu kim cương), Kārikā 108–135 (Phân tích lý thuyết cưỡng gán Adhyāsa, ẩn dụ Rajju-sarpa và sự triệt tiêu Vô minh); đối chiếu bài giảng "2. Buổi 2 (ngày 18-01-2026).mp3", "3. Buổi 3 (ngày 31-3-2026).mp3" & "3. Buổi học ngày 21-9-2026.mp3".</li>
+                <li data-number="4">Thiền sư Thích Thanh Từ (1980), Bài kệ "Mộng", khắc tại Thiền viện Chân Không, Bà Rịa - Vũng Tàu, sáng tác tháng 7/1980; đối chiếu bài giảng "3. Buổi học ngày 21-9-2026.mp3".</li>
+                <li data-number="5">Thiền sư Thích Thanh Từ (1997), <em>Bí quyết tu thiền</em>, NXB Tôn Giáo, Hà Nội, tr. 35–48; đối chiếu bài giảng "1. Buổi 1 (18-01-2026).mp3".</li>
+                <li data-number="6">Thích Chơn Thiện (1999), <em>Pāli Phật học Đại cương</em>, NXB Tôn Giáo, Hà Nội, tr. 84–96; đối chiếu bài giảng "4b. Buổi học ngày 23-9-2026.mp3" (Làm rõ sự phân định ranh giới giữa Vô minh Avidyā làm nhân gốc ngầm rỉ và Điên đảo nhận thức Vipallāsa làm quả sinh khởi).</li>
+                <li data-number="7">Thích Minh Châu (dịch) (2012), <em>Kinh Trung Bộ (Majjhima Nikāya)</em>, Kinh Tất Cả Lậu Hoặc (Sabbāsava Sutta, số 2), NXB Tôn Giáo, Hà Nội; đối chiếu bài giảng "3. Buổi 3 (ngày 31-3-2026).mp3".</li>
+                <li data-number="8">Radhakrishnan, S. (1999), <em>Indian Philosophy</em>, Vol. 2, Oxford University Press, New Delhi, tr. 480–485; đối chiếu bài giảng "2. Buổi học ngày 16-9-2026.mp3".</li>
+                <li data-number="9">Viện Triết học (2004), <em>Lịch sử Triết học Phương Đông</em>, NXB Chính trị Quốc gia, Hà Nội, tr. 330–335; đối chiếu bài giảng "3. Buổi học ngày 21-9-2026.mp3".</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html> 
